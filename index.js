@@ -1,12 +1,13 @@
 
 const express = require("express")
 const mongoose = require("mongoose")
+const router = require("./routes/index")
+const { errorHandler } = require('./middleware/errorHandler')
 
 require('dotenv').config();
 
 const app = express();
 app.use(express.json());
-
 
 mongoose.connect(process.env.URI)
     .then((res) => {
@@ -16,3 +17,6 @@ mongoose.connect(process.env.URI)
     .catch((err) => {
         console.log(err)
     })
+
+app.use(router)
+app.use(errorHandler)
