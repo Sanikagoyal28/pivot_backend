@@ -73,7 +73,7 @@ const add_question = async (req, res, next) => {
 
         const add_ques = await Question.create({
             question: question.toLowerCase(),
-            difficulty: difficulty,
+            difficulty: difficulty.toLowerCase(),
             correct_answer: correct_answer,
             incorrect_answers: incorrect_answers,
             category: category
