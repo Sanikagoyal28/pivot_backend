@@ -14,12 +14,12 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    correct_answer_count: {
+    correct_answer: {
         type: Number,
         default:0,
         required: true
     },
-    incorrect_answer_count: {
+    total_ques: {
         type: Number,
         default:0,
         required: true

@@ -31,6 +31,7 @@ const get_category = async (req, res, next) => {
     try {
 
         const categories = await Category.find({})
+        console.log(categories)
 
         return res.status(200).json({ success: true, msg: "All Categories", categories })
     }
